@@ -647,6 +647,8 @@ func (t *http2Server) HandleStreams(handle func(*Stream), traceCtx func(context.
 
 		if err == nil {
 			logger.Infof("HandleStreams: ReadFrame() returned: %s", frame.Header().String())
+		} else {
+			logger.Errorf("HandleStream: ReadFrame() errored: %v", t.framer.fr.ErrorDetail())
 		}
 
 		atomic.StoreInt64(&t.lastRead, time.Now().UnixNano())
