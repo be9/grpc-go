@@ -27,20 +27,20 @@ import (
 	"net"
 	"os"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/admin"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/grpclog"
-	"google.golang.org/grpc/health"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/reflection"
-	"google.golang.org/grpc/xds"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/admin"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/grpclog"
+	"github.com/be9/grpc-go/health"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/reflection"
+	"github.com/be9/grpc-go/xds"
 
-	xdscreds "google.golang.org/grpc/credentials/xds"
-	healthgrpc "google.golang.org/grpc/health/grpc_health_v1"
-	healthpb "google.golang.org/grpc/health/grpc_health_v1"
-	testgrpc "google.golang.org/grpc/interop/grpc_testing"
-	testpb "google.golang.org/grpc/interop/grpc_testing"
+	xdscreds "github.com/be9/grpc-go/credentials/xds"
+	healthgrpc "github.com/be9/grpc-go/health/grpc_health_v1"
+	healthpb "github.com/be9/grpc-go/health/grpc_health_v1"
+	testgrpc "github.com/be9/grpc-go/interop/grpc_testing"
+	testpb "github.com/be9/grpc-go/interop/grpc_testing"
 )
 
 var (

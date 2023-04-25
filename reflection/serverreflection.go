@@ -40,16 +40,16 @@ import (
 	"io"
 	"sort"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/status"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/reflect/protodesc"
 	"google.golang.org/protobuf/reflect/protoreflect"
 	"google.golang.org/protobuf/reflect/protoregistry"
 
-	v1alphagrpc "google.golang.org/grpc/reflection/grpc_reflection_v1alpha"
-	v1alphapb "google.golang.org/grpc/reflection/grpc_reflection_v1alpha"
+	v1alphagrpc "github.com/be9/grpc-go/reflection/grpc_reflection_v1alpha"
+	v1alphapb "github.com/be9/grpc-go/reflection/grpc_reflection_v1alpha"
 )
 
 // GRPCServer is the interface provided by a gRPC server. It is implemented by

@@ -25,10 +25,10 @@ import (
 	"log"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
-	ecpb "google.golang.org/grpc/examples/features/proto/echo"
-	"google.golang.org/grpc/resolver"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/credentials/insecure"
+	ecpb "github.com/be9/grpc-go/examples/features/proto/echo"
+	"github.com/be9/grpc-go/resolver"
 )
 
 const (

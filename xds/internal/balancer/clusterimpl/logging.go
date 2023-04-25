@@ -21,8 +21,8 @@ package clusterimpl
 import (
 	"fmt"
 
-	"google.golang.org/grpc/grpclog"
-	internalgrpclog "google.golang.org/grpc/internal/grpclog"
+	"github.com/be9/grpc-go/grpclog"
+	internalgrpclog "github.com/be9/grpc-go/internal/grpclog"
 )
 
 const prefix = "[xds-cluster-impl-lb %p] "

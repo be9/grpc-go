@@ -23,11 +23,11 @@ import (
 	"errors"
 	"fmt"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/balancer"
-	"google.golang.org/grpc/internal/grpcsync"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/serviceconfig"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/balancer"
+	"github.com/be9/grpc-go/internal/grpcsync"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/serviceconfig"
 )
 
 const (

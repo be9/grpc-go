@@ -1,4 +1,4 @@
-module google.golang.org/grpc
+module github.com/be9/grpc-go
 
 go 1.17
 
@@ -21,8 +21,14 @@ require (
 require (
 	cloud.google.com/go/compute v1.15.1 // indirect
 	cloud.google.com/go/compute/metadata v0.2.3 // indirect
+	github.com/alexflint/go-arg v1.0.0 // indirect
+	github.com/alexflint/go-scalar v1.0.0 // indirect
 	github.com/census-instrumentation/opencensus-proto v0.4.1 // indirect
 	github.com/envoyproxy/protoc-gen-validate v0.9.1 // indirect
+	github.com/pkg/errors v0.8.1 // indirect
+	github.com/rs/zerolog v1.15.0 // indirect
+	github.com/sirkon/go-imports-rename v0.1.3 // indirect
+	github.com/sirkon/gosrcfmt v1.6.0 // indirect
 	golang.org/x/text v0.8.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 )

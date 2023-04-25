@@ -30,19 +30,19 @@ import (
 	"sync"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/balancer"
-	grpclbstate "google.golang.org/grpc/balancer/grpclb/state"
-	"google.golang.org/grpc/connectivity"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/grpclog"
-	"google.golang.org/grpc/internal"
-	"google.golang.org/grpc/internal/backoff"
-	"google.golang.org/grpc/internal/resolver/dns"
-	"google.golang.org/grpc/resolver"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/balancer"
+	grpclbstate "github.com/be9/grpc-go/balancer/grpclb/state"
+	"github.com/be9/grpc-go/connectivity"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/grpclog"
+	"github.com/be9/grpc-go/internal"
+	"github.com/be9/grpc-go/internal/backoff"
+	"github.com/be9/grpc-go/internal/resolver/dns"
+	"github.com/be9/grpc-go/resolver"
 
 	durationpb "github.com/golang/protobuf/ptypes/duration"
-	lbpb "google.golang.org/grpc/balancer/grpclb/grpc_lb_v1"
+	lbpb "github.com/be9/grpc-go/balancer/grpclb/grpc_lb_v1"
 )
 
 const (

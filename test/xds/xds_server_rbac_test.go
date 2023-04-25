@@ -27,14 +27,14 @@ import (
 	"testing"
 
 	v3routerpb "github.com/envoyproxy/go-control-plane/envoy/extensions/filters/http/router/v3"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal"
-	"google.golang.org/grpc/internal/envconfig"
-	"google.golang.org/grpc/internal/testutils"
-	"google.golang.org/grpc/internal/testutils/xds/e2e"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal"
+	"github.com/be9/grpc-go/internal/envconfig"
+	"github.com/be9/grpc-go/internal/testutils"
+	"github.com/be9/grpc-go/internal/testutils/xds/e2e"
+	"github.com/be9/grpc-go/status"
 	"google.golang.org/protobuf/types/known/anypb"
 
 	v3corepb "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
@@ -45,8 +45,8 @@ import (
 	v3httppb "github.com/envoyproxy/go-control-plane/envoy/extensions/filters/network/http_connection_manager/v3"
 	v3matcherpb "github.com/envoyproxy/go-control-plane/envoy/type/matcher/v3"
 	wrapperspb "github.com/golang/protobuf/ptypes/wrappers"
-	testgrpc "google.golang.org/grpc/test/grpc_testing"
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	testgrpc "github.com/be9/grpc-go/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 )
 
 // TestServerSideXDS_RouteConfiguration is an e2e test which verifies routing

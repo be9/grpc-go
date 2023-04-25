@@ -26,9 +26,9 @@ import (
 	"sync"
 	"time"
 
-	"google.golang.org/grpc/internal/cache"
-	"google.golang.org/grpc/internal/grpcsync"
-	"google.golang.org/grpc/xds/internal/xdsclient/bootstrap"
+	"github.com/be9/grpc-go/internal/cache"
+	"github.com/be9/grpc-go/internal/grpcsync"
+	"github.com/be9/grpc-go/xds/internal/xdsclient/bootstrap"
 )
 
 // New returns a new xDS client configured by the bootstrap file specified in env

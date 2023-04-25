@@ -30,20 +30,20 @@ import (
 	"net/url"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/grpclog"
-	"google.golang.org/grpc/internal/envconfig"
-	"google.golang.org/grpc/internal/googlecloud"
-	internalgrpclog "google.golang.org/grpc/internal/grpclog"
-	"google.golang.org/grpc/internal/grpcrand"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/xds/internal/xdsclient"
-	"google.golang.org/grpc/xds/internal/xdsclient/bootstrap"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/grpclog"
+	"github.com/be9/grpc-go/internal/envconfig"
+	"github.com/be9/grpc-go/internal/googlecloud"
+	internalgrpclog "github.com/be9/grpc-go/internal/grpclog"
+	"github.com/be9/grpc-go/internal/grpcrand"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/xds/internal/xdsclient"
+	"github.com/be9/grpc-go/xds/internal/xdsclient/bootstrap"
 	"google.golang.org/protobuf/types/known/structpb"
 
 	v3corepb "github.com/envoyproxy/go-control-plane/envoy/config/core/v3"
 
-	_ "google.golang.org/grpc/xds" // To register xds resolvers and balancers.
+	_ "github.com/be9/grpc-go/xds" // To register xds resolvers and balancers.
 )
 
 const (

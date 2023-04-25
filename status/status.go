@@ -34,8 +34,8 @@ import (
 
 	spb "google.golang.org/genproto/googleapis/rpc/status"
 
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/internal/status"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/internal/status"
 )
 
 // Status references google.golang.org/grpc/internal/status. It represents an

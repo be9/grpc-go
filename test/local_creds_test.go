@@ -26,16 +26,16 @@ import (
 	"testing"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/credentials/local"
-	"google.golang.org/grpc/internal/stubserver"
-	"google.golang.org/grpc/peer"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/credentials/local"
+	"github.com/be9/grpc-go/internal/stubserver"
+	"github.com/be9/grpc-go/peer"
+	"github.com/be9/grpc-go/status"
 
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 )
 
 func testLocalCredsE2ESucceed(network, address string) error {

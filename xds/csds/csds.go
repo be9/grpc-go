@@ -29,12 +29,12 @@ import (
 	"io"
 	"sync"
 
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/grpclog"
-	internalgrpclog "google.golang.org/grpc/internal/grpclog"
-	"google.golang.org/grpc/status"
-	"google.golang.org/grpc/xds/internal/xdsclient"
-	"google.golang.org/grpc/xds/internal/xdsclient/xdsresource"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/grpclog"
+	internalgrpclog "github.com/be9/grpc-go/internal/grpclog"
+	"github.com/be9/grpc-go/status"
+	"github.com/be9/grpc-go/xds/internal/xdsclient"
+	"github.com/be9/grpc-go/xds/internal/xdsclient/xdsresource"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
 	v3adminpb "github.com/envoyproxy/go-control-plane/envoy/admin/v3"

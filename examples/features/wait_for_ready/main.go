@@ -27,12 +27,12 @@ import (
 	"sync"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/status"
 
-	pb "google.golang.org/grpc/examples/features/proto/echo"
+	pb "github.com/be9/grpc-go/examples/features/proto/echo"
 )
 
 // server is used to implement EchoServer.

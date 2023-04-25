@@ -31,13 +31,13 @@ import (
 	v3matcherpb "github.com/envoyproxy/go-control-plane/envoy/type/matcher/v3"
 	v3typepb "github.com/envoyproxy/go-control-plane/envoy/type/v3"
 	wrapperspb "github.com/golang/protobuf/ptypes/wrappers"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/internal/grpctest"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/peer"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/internal/grpctest"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/peer"
+	"github.com/be9/grpc-go/status"
 )
 
 type s struct {

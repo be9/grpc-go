@@ -32,15 +32,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/internal/channelz"
-	"google.golang.org/grpc/keepalive"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/stats"
-	"google.golang.org/grpc/status"
-	"google.golang.org/grpc/tap"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/internal/channelz"
+	"github.com/be9/grpc-go/keepalive"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/stats"
+	"github.com/be9/grpc-go/status"
+	"github.com/be9/grpc-go/tap"
 )
 
 // ErrNoHeaders is used as a signal that a trailers only response was received,

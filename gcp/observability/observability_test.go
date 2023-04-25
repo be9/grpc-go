@@ -33,14 +33,14 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"go.opencensus.io/stats/view"
 	"go.opencensus.io/trace"
-	"google.golang.org/grpc/internal/envconfig"
-	"google.golang.org/grpc/internal/grpcsync"
-	"google.golang.org/grpc/internal/grpctest"
-	"google.golang.org/grpc/internal/leakcheck"
-	"google.golang.org/grpc/internal/stubserver"
-	"google.golang.org/grpc/internal/testutils"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/test/grpc_testing"
+	"github.com/be9/grpc-go/internal/envconfig"
+	"github.com/be9/grpc-go/internal/grpcsync"
+	"github.com/be9/grpc-go/internal/grpctest"
+	"github.com/be9/grpc-go/internal/leakcheck"
+	"github.com/be9/grpc-go/internal/stubserver"
+	"github.com/be9/grpc-go/internal/testutils"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/test/grpc_testing"
 )
 
 type s struct {

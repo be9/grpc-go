@@ -25,14 +25,14 @@ import (
 	"testing"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/channelz"
-	"google.golang.org/grpc/resolver/manual"
-	"google.golang.org/grpc/status"
-	testgrpc "google.golang.org/grpc/test/grpc_testing"
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/channelz"
+	"github.com/be9/grpc-go/resolver/manual"
+	"github.com/be9/grpc-go/status"
+	testgrpc "github.com/be9/grpc-go/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 )
 
 // TestClientConnClose_WithPendingRPC tests the scenario where the channel has

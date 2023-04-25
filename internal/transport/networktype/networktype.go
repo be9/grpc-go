@@ -21,7 +21,7 @@
 package networktype
 
 import (
-	"google.golang.org/grpc/resolver"
+	"github.com/be9/grpc-go/resolver"
 )
 
 // keyType is the key to use for storing State in Attributes.

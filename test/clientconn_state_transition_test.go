@@ -27,14 +27,14 @@ import (
 	"time"
 
 	"golang.org/x/net/http2"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/backoff"
-	"google.golang.org/grpc/balancer"
-	"google.golang.org/grpc/connectivity"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/testutils"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/resolver/manual"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/backoff"
+	"github.com/be9/grpc-go/balancer"
+	"github.com/be9/grpc-go/connectivity"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/testutils"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/resolver/manual"
 )
 
 const stateRecordingBalancerName = "state_recording_balancer"

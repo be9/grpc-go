@@ -27,13 +27,13 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/grpclog"
-	"google.golang.org/grpc/peer"
-	"google.golang.org/grpc/resolver"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/grpclog"
+	"github.com/be9/grpc-go/peer"
+	"github.com/be9/grpc-go/resolver"
 
-	testgrpc "google.golang.org/grpc/test/grpc_testing"
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	testgrpc "github.com/be9/grpc-go/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 )
 
 var logger = grpclog.Component("testutils-roundrobin")

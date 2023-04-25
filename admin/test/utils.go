@@ -27,17 +27,17 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/admin"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/testutils/xds/bootstrap"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/admin"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/testutils/xds/bootstrap"
+	"github.com/be9/grpc-go/status"
 
 	v3statusgrpc "github.com/envoyproxy/go-control-plane/envoy/service/status/v3"
 	v3statuspb "github.com/envoyproxy/go-control-plane/envoy/service/status/v3"
-	channelzgrpc "google.golang.org/grpc/channelz/grpc_channelz_v1"
-	channelzpb "google.golang.org/grpc/channelz/grpc_channelz_v1"
+	channelzgrpc "github.com/be9/grpc-go/channelz/grpc_channelz_v1"
+	channelzpb "github.com/be9/grpc-go/channelz/grpc_channelz_v1"
 )
 
 const (

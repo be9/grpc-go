@@ -26,9 +26,9 @@ package grpc_reflection_v1alpha
 
 import (
 	context "context"
-	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
+	grpc "github.com/be9/grpc-go"
+	codes "github.com/be9/grpc-go/codes"
+	status "github.com/be9/grpc-go/status"
 )
 
 // This is a compile-time assertion to ensure that this generated file

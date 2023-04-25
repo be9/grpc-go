@@ -24,9 +24,9 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"google.golang.org/grpc/balancer"
-	"google.golang.org/grpc/connectivity"
-	"google.golang.org/grpc/internal/testutils"
+	"github.com/be9/grpc-go/balancer"
+	"github.com/be9/grpc-go/connectivity"
+	"github.com/be9/grpc-go/internal/testutils"
 )
 
 func newTestRing(cStats []connectivity.State) *ring {

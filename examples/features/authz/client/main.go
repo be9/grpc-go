@@ -28,14 +28,14 @@ import (
 	"time"
 
 	"golang.org/x/oauth2"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/credentials/oauth"
-	"google.golang.org/grpc/examples/data"
-	"google.golang.org/grpc/examples/features/authz/token"
-	ecpb "google.golang.org/grpc/examples/features/proto/echo"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/credentials/oauth"
+	"github.com/be9/grpc-go/examples/data"
+	"github.com/be9/grpc-go/examples/features/authz/token"
+	ecpb "github.com/be9/grpc-go/examples/features/proto/echo"
+	"github.com/be9/grpc-go/status"
 )
 
 var addr = flag.String("addr", "localhost:50051", "the address to connect to")

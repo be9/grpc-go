@@ -31,16 +31,16 @@ import (
 	"github.com/golang/protobuf/proto"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/benchmark/stats"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/grpclog"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/peer"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/benchmark/stats"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/grpclog"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/peer"
+	"github.com/be9/grpc-go/status"
 
-	testgrpc "google.golang.org/grpc/interop/grpc_testing"
-	testpb "google.golang.org/grpc/interop/grpc_testing"
+	testgrpc "github.com/be9/grpc-go/interop/grpc_testing"
+	testpb "github.com/be9/grpc-go/interop/grpc_testing"
 )
 
 var (

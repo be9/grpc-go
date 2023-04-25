@@ -26,12 +26,12 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/uuid"
-	"google.golang.org/grpc/internal/grpctest"
-	"google.golang.org/grpc/internal/testutils"
-	"google.golang.org/grpc/internal/testutils/xds/fakeserver"
-	xdstestutils "google.golang.org/grpc/xds/internal/testutils"
-	"google.golang.org/grpc/xds/internal/xdsclient/transport"
-	"google.golang.org/grpc/xds/internal/xdsclient/xdsresource/version"
+	"github.com/be9/grpc-go/internal/grpctest"
+	"github.com/be9/grpc-go/internal/testutils"
+	"github.com/be9/grpc-go/internal/testutils/xds/fakeserver"
+	xdstestutils "github.com/be9/grpc-go/xds/internal/testutils"
+	"github.com/be9/grpc-go/xds/internal/xdsclient/transport"
+	"github.com/be9/grpc-go/xds/internal/xdsclient/xdsresource/version"
 	"google.golang.org/protobuf/testing/protocmp"
 	"google.golang.org/protobuf/types/known/anypb"
 

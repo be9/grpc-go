@@ -25,17 +25,17 @@ import (
 	"sync"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/google"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/grpclog"
-	"google.golang.org/grpc/interop"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/credentials/google"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/grpclog"
+	"github.com/be9/grpc-go/interop"
 
-	_ "google.golang.org/grpc/balancer/grpclb"      // Register the grpclb load balancing policy.
-	_ "google.golang.org/grpc/balancer/rls"         // Register the RLS load balancing policy.
-	_ "google.golang.org/grpc/xds/googledirectpath" // Register xDS resolver required for c2p directpath.
+	_ "github.com/be9/grpc-go/balancer/grpclb"      // Register the grpclb load balancing policy.
+	_ "github.com/be9/grpc-go/balancer/rls"         // Register the RLS load balancing policy.
+	_ "github.com/be9/grpc-go/xds/googledirectpath" // Register xDS resolver required for c2p directpath.
 
-	testgrpc "google.golang.org/grpc/interop/grpc_testing"
+	testgrpc "github.com/be9/grpc-go/interop/grpc_testing"
 )
 
 const (

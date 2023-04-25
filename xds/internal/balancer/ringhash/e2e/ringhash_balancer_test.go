@@ -23,18 +23,18 @@ import (
 	"testing"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/connectivity"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/grpctest"
-	"google.golang.org/grpc/internal/testutils"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/resolver/manual"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/connectivity"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/grpctest"
+	"github.com/be9/grpc-go/internal/testutils"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/resolver/manual"
 
-	testgrpc "google.golang.org/grpc/test/grpc_testing"
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	testgrpc "github.com/be9/grpc-go/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 
-	_ "google.golang.org/grpc/xds/internal/balancer/ringhash" // Register the ring_hash_experimental LB policy.
+	_ "github.com/be9/grpc-go/xds/internal/balancer/ringhash" // Register the ring_hash_experimental LB policy.
 )
 
 type s struct {

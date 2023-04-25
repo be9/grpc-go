@@ -25,16 +25,16 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"google.golang.org/grpc/balancer"
-	"google.golang.org/grpc/balancer/roundrobin"
-	"google.golang.org/grpc/connectivity"
-	"google.golang.org/grpc/internal/balancer/stub"
-	"google.golang.org/grpc/internal/balancergroup"
-	"google.golang.org/grpc/internal/grpctest"
-	"google.golang.org/grpc/internal/hierarchy"
-	internalserviceconfig "google.golang.org/grpc/internal/serviceconfig"
-	"google.golang.org/grpc/internal/testutils"
-	"google.golang.org/grpc/resolver"
+	"github.com/be9/grpc-go/balancer"
+	"github.com/be9/grpc-go/balancer/roundrobin"
+	"github.com/be9/grpc-go/connectivity"
+	"github.com/be9/grpc-go/internal/balancer/stub"
+	"github.com/be9/grpc-go/internal/balancergroup"
+	"github.com/be9/grpc-go/internal/grpctest"
+	"github.com/be9/grpc-go/internal/hierarchy"
+	internalserviceconfig "github.com/be9/grpc-go/internal/serviceconfig"
+	"github.com/be9/grpc-go/internal/testutils"
+	"github.com/be9/grpc-go/resolver"
 )
 
 const (

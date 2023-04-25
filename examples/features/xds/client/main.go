@@ -27,12 +27,12 @@ import (
 	"strings"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
-	xdscreds "google.golang.org/grpc/credentials/xds"
-	pb "google.golang.org/grpc/examples/helloworld/helloworld"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/credentials/insecure"
+	xdscreds "github.com/be9/grpc-go/credentials/xds"
+	pb "github.com/be9/grpc-go/examples/helloworld/helloworld"
 
-	_ "google.golang.org/grpc/xds" // To install the xds resolvers and balancers.
+	_ "github.com/be9/grpc-go/xds" // To install the xds resolvers and balancers.
 )
 
 var (

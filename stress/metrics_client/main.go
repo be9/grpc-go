@@ -25,10 +25,10 @@ import (
 	"fmt"
 	"io"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/grpclog"
-	metricspb "google.golang.org/grpc/stress/grpc_testing"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/grpclog"
+	metricspb "github.com/be9/grpc-go/stress/grpc_testing"
 )
 
 var (

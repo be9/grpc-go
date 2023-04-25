@@ -27,10 +27,10 @@ import (
 	"go.opencensus.io/tag"
 	"go.opencensus.io/trace"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/internal"
-	"google.golang.org/grpc/stats"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/internal"
+	"github.com/be9/grpc-go/stats"
+	"github.com/be9/grpc-go/status"
 )
 
 var (

@@ -25,7 +25,7 @@ import (
 	"net"
 	"path/filepath"
 
-	"google.golang.org/grpc/stats"
+	"github.com/be9/grpc-go/stats"
 )
 
 // Handler implements [stats.Handler](https://pkg.go.dev/google.golang.org/grpc/stats#Handler) interface.

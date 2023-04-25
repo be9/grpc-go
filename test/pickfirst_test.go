@@ -23,19 +23,19 @@ import (
 	"testing"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/connectivity"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/channelz"
-	"google.golang.org/grpc/internal/stubserver"
-	"google.golang.org/grpc/internal/testutils/pickfirst"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/resolver/manual"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/connectivity"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/channelz"
+	"github.com/be9/grpc-go/internal/stubserver"
+	"github.com/be9/grpc-go/internal/testutils/pickfirst"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/resolver/manual"
+	"github.com/be9/grpc-go/status"
 
-	testgrpc "google.golang.org/grpc/test/grpc_testing"
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	testgrpc "github.com/be9/grpc-go/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 )
 
 const pickFirstServiceConfig = `{"loadBalancingConfig": [{"pick_first":{}}]}`

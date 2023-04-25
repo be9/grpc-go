@@ -29,16 +29,16 @@ import (
 	"net"
 	"strings"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/authz"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/examples/data"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/authz"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/examples/data"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/status"
 
-	"google.golang.org/grpc/examples/features/authz/token"
-	pb "google.golang.org/grpc/examples/features/proto/echo"
+	"github.com/be9/grpc-go/examples/features/authz/token"
+	pb "github.com/be9/grpc-go/examples/features/proto/echo"
 )
 
 const (

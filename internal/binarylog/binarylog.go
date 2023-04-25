@@ -24,8 +24,8 @@ import (
 	"fmt"
 	"os"
 
-	"google.golang.org/grpc/grpclog"
-	"google.golang.org/grpc/internal/grpcutil"
+	"github.com/be9/grpc-go/grpclog"
+	"github.com/be9/grpc-go/internal/grpcutil"
 )
 
 var grpclogLogger = grpclog.Component("binarylog")

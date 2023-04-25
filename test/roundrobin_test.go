@@ -24,20 +24,20 @@ import (
 	"testing"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/connectivity"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/channelz"
-	imetadata "google.golang.org/grpc/internal/metadata"
-	"google.golang.org/grpc/internal/stubserver"
-	rrutil "google.golang.org/grpc/internal/testutils/roundrobin"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/resolver/manual"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/connectivity"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/channelz"
+	imetadata "github.com/be9/grpc-go/internal/metadata"
+	"github.com/be9/grpc-go/internal/stubserver"
+	rrutil "github.com/be9/grpc-go/internal/testutils/roundrobin"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/resolver/manual"
+	"github.com/be9/grpc-go/status"
 
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 )
 
 const rrServiceConfig = `{"loadBalancingConfig": [{"round_robin":{}}]}`

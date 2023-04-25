@@ -23,17 +23,17 @@ import (
 	"net"
 	"time"
 
-	"google.golang.org/grpc/backoff"
-	"google.golang.org/grpc/channelz"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal"
-	internalbackoff "google.golang.org/grpc/internal/backoff"
-	"google.golang.org/grpc/internal/binarylog"
-	"google.golang.org/grpc/internal/transport"
-	"google.golang.org/grpc/keepalive"
-	"google.golang.org/grpc/resolver"
-	"google.golang.org/grpc/stats"
+	"github.com/be9/grpc-go/backoff"
+	"github.com/be9/grpc-go/channelz"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal"
+	internalbackoff "github.com/be9/grpc-go/internal/backoff"
+	"github.com/be9/grpc-go/internal/binarylog"
+	"github.com/be9/grpc-go/internal/transport"
+	"github.com/be9/grpc-go/keepalive"
+	"github.com/be9/grpc-go/resolver"
+	"github.com/be9/grpc-go/stats"
 )
 
 func init() {

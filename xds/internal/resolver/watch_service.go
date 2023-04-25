@@ -23,11 +23,11 @@ import (
 	"sync"
 	"time"
 
-	"google.golang.org/grpc/internal/grpclog"
-	"google.golang.org/grpc/internal/pretty"
-	"google.golang.org/grpc/xds/internal/clusterspecifier"
-	"google.golang.org/grpc/xds/internal/xdsclient"
-	"google.golang.org/grpc/xds/internal/xdsclient/xdsresource"
+	"github.com/be9/grpc-go/internal/grpclog"
+	"github.com/be9/grpc-go/internal/pretty"
+	"github.com/be9/grpc-go/xds/internal/clusterspecifier"
+	"github.com/be9/grpc-go/xds/internal/xdsclient"
+	"github.com/be9/grpc-go/xds/internal/xdsclient/xdsresource"
 )
 
 // serviceUpdate contains information received from the LDS/RDS responses which

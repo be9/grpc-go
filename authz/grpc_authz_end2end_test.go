@@ -28,16 +28,16 @@ import (
 	"testing"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/authz"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/grpctest"
-	"google.golang.org/grpc/metadata"
-	"google.golang.org/grpc/status"
-	pb "google.golang.org/grpc/test/grpc_testing"
-	"google.golang.org/grpc/testdata"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/authz"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/grpctest"
+	"github.com/be9/grpc-go/metadata"
+	"github.com/be9/grpc-go/status"
+	pb "github.com/be9/grpc-go/test/grpc_testing"
+	"github.com/be9/grpc-go/testdata"
 )
 
 type testServer struct {

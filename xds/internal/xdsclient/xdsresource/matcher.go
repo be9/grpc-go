@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"strings"
 
-	"google.golang.org/grpc/internal/grpcrand"
-	"google.golang.org/grpc/internal/grpcutil"
-	iresolver "google.golang.org/grpc/internal/resolver"
-	"google.golang.org/grpc/internal/xds/matcher"
-	"google.golang.org/grpc/metadata"
+	"github.com/be9/grpc-go/internal/grpcrand"
+	"github.com/be9/grpc-go/internal/grpcutil"
+	iresolver "github.com/be9/grpc-go/internal/resolver"
+	"github.com/be9/grpc-go/internal/xds/matcher"
+	"github.com/be9/grpc-go/metadata"
 )
 
 // RouteToMatcher converts a route to a Matcher to match incoming RPC's against.

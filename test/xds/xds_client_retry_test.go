@@ -23,17 +23,17 @@ import (
 	"fmt"
 	"testing"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/credentials/insecure"
-	"google.golang.org/grpc/internal/stubserver"
-	"google.golang.org/grpc/internal/testutils/xds/e2e"
-	"google.golang.org/grpc/status"
+	"github.com/be9/grpc-go"
+	"github.com/be9/grpc-go/codes"
+	"github.com/be9/grpc-go/credentials/insecure"
+	"github.com/be9/grpc-go/internal/stubserver"
+	"github.com/be9/grpc-go/internal/testutils/xds/e2e"
+	"github.com/be9/grpc-go/status"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 
 	v3routepb "github.com/envoyproxy/go-control-plane/envoy/config/route/v3"
-	testgrpc "google.golang.org/grpc/test/grpc_testing"
-	testpb "google.golang.org/grpc/test/grpc_testing"
+	testgrpc "github.com/be9/grpc-go/test/grpc_testing"
+	testpb "github.com/be9/grpc-go/test/grpc_testing"
 )
 
 func (s) TestClientSideRetry(t *testing.T) {
