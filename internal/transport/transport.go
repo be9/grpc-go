@@ -311,11 +311,14 @@ func (s *Stream) updateHeaderSent() bool {
 }
 
 func (s *Stream) swapState(st streamState) streamState {
+	logger.Infof("[stream %v] swapState -> %v (was %v)", s.id, st, s.state)
 	return streamState(atomic.SwapUint32((*uint32)(&s.state), uint32(st)))
 }
 
 func (s *Stream) compareAndSwapState(oldState, newState streamState) bool {
-	return atomic.CompareAndSwapUint32((*uint32)(&s.state), uint32(oldState), uint32(newState))
+	res := atomic.CompareAndSwapUint32((*uint32)(&s.state), uint32(oldState), uint32(newState))
+	logger.Infof("[stream %v] compareAndSwapState -> %v: %v", s.id, newState, res)
+	return res
 }
 
 func (s *Stream) getState() streamState {

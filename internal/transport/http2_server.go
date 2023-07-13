@@ -357,6 +357,7 @@ func (t *http2Server) operateHeaders(frame *http2.MetaHeadersFrame, handle func(
 	// frame.Truncated is set to true when framer detects that the current header
 	// list size hits MaxHeaderListSize limit.
 	if frame.Truncated {
+		logger.Infof("[stream %v] operateHeaders: cleanupStream because Truncated", streamID)
 		t.controlBuf.put(&cleanupStream{
 			streamID: streamID,
 			rst:      true,
@@ -469,6 +470,7 @@ func (t *http2Server) operateHeaders(frame *http2.MetaHeadersFrame, handle func(
 	}
 
 	if protocolError {
+		logger.Infof("[stream %d] OperateHeaders: protocol error condition", streamID)
 		t.controlBuf.put(&cleanupStream{
 			streamID: streamID,
 			rst:      true,
@@ -513,6 +515,7 @@ func (t *http2Server) operateHeaders(frame *http2.MetaHeadersFrame, handle func(
 
 	if frame.StreamEnded() {
 		// s is just created by the caller. No lock needed.
+		logger.Infof("[stream %d] OperateHeaders setting state to streamReadDone (%v)", s.id, streamReadDone)
 		s.state = streamReadDone
 	}
 	if timeoutSet {
@@ -539,6 +542,7 @@ func (t *http2Server) operateHeaders(frame *http2.MetaHeadersFrame, handle func(
 	}
 	if uint32(len(t.activeStreams)) >= t.maxStreams {
 		t.mu.Unlock()
+		logger.Infof("[stream %v] operateHeaders: cleanupStream because maxStreams", streamID)
 		t.controlBuf.put(&cleanupStream{
 			streamID: streamID,
 			rst:      true,
@@ -640,6 +644,13 @@ func (t *http2Server) HandleStreams(handle func(*Stream), traceCtx func(context.
 	for {
 		t.controlBuf.throttle()
 		frame, err := t.framer.fr.ReadFrame()
+
+		if err == nil {
+			logger.Infof("HandleStreams: ReadFrame() returned: %s", frame.Header().String())
+		} else {
+			logger.Errorf("HandleStream: ReadFrame() errored: %v", t.framer.fr.ErrorDetail())
+		}
+
 		atomic.StoreInt64(&t.lastRead, time.Now().UnixNano())
 		if err != nil {
 			if se, ok := err.(http2.StreamError); ok {
@@ -652,6 +663,7 @@ func (t *http2Server) HandleStreams(handle func(*Stream), traceCtx func(context.
 				if s != nil {
 					t.closeStream(s, true, se.Code, false)
 				} else {
+					logger.Infof("[stream %v] HandleStreams: cleanupStream because err %v", se.StreamID, se.Cause)
 					t.controlBuf.put(&cleanupStream{
 						streamID: se.StreamID,
 						rst:      true,
@@ -661,6 +673,8 @@ func (t *http2Server) HandleStreams(handle func(*Stream), traceCtx func(context.
 				}
 				continue
 			}
+			logger.Infof("[stream %v] HandleStreams: ReadFrame errored with %v", err)
+
 			if err == io.EOF || err == io.ErrUnexpectedEOF {
 				t.Close(err)
 				return
@@ -756,6 +770,8 @@ func (t *http2Server) updateFlowControl(n uint32) {
 }
 
 func (t *http2Server) handleData(f *http2.DataFrame) {
+	logger.Infof("[stream %v] handleData: entering length=%v flags=%v",
+		f.Header().StreamID, f.Header().Length, f.Header().Flags)
 	size := f.Header().Length
 	var sendBDPPing bool
 	if t.bdpEst != nil {
@@ -789,6 +805,7 @@ func (t *http2Server) handleData(f *http2.DataFrame) {
 	// Select the right stream to dispatch.
 	s, ok := t.getStream(f)
 	if !ok {
+		logger.Infof("handleData: stream not found")
 		return
 	}
 	if s.getState() == streamReadDone {
@@ -817,12 +834,16 @@ func (t *http2Server) handleData(f *http2.DataFrame) {
 	}
 	if f.StreamEnded() {
 		// Received the end of stream from the client.
+		logger.Infof("handleData: StreamEnded=true")
 		s.compareAndSwapState(streamActive, streamReadDone)
 		s.write(recvMsg{err: io.EOF})
+	} else {
+		logger.Infof("handleData: StreamEnded=false")
 	}
 }
 
 func (t *http2Server) handleRSTStream(f *http2.RSTStreamFrame) {
+	logger.Infof("http2Server.handleRSTStream. StreamID=%v Flags=%v ErrCode=%v", f.StreamID, f.Flags, f.ErrCode)
 	// If the stream is not deleted from the transport's active streams map, then do a regular close stream.
 	if s, ok := t.getStream(f); ok {
 		t.closeStream(s, false, 0, false)
@@ -1034,6 +1055,8 @@ func (t *http2Server) writeHeaderLocked(s *Stream) error {
 // TODO(zhaoq): Now it indicates the end of entire stream. Revisit if early
 // OK is adopted.
 func (t *http2Server) WriteStatus(s *Stream, st *status.Status) error {
+	logger.Infof("[stream %v] http2Server.WriteStatus code=%v message=%v state=%v",
+		s.id, st.Code(), st.Message(), s.getState())
 	s.hdrMu.Lock()
 	defer s.hdrMu.Unlock()
 
@@ -1274,6 +1297,8 @@ func (t *http2Server) deleteStream(s *Stream, eosReceived bool) {
 
 // finishStream closes the stream and puts the trailing headerFrame into controlbuf.
 func (t *http2Server) finishStream(s *Stream, rst bool, rstCode http2.ErrCode, hdr *headerFrame, eosReceived bool) {
+	logger.Infof("http2Server.finishStream. rst=%v rstCode=%v eosReceived=%v", rst, rstCode, eosReceived)
+
 	// In case stream sending and receiving are invoked in separate
 	// goroutines (e.g., bi-directional streaming), cancel needs to be
 	// called to interrupt the potential blocking on other goroutines.
@@ -1298,6 +1323,7 @@ func (t *http2Server) finishStream(s *Stream, rst bool, rstCode http2.ErrCode, h
 
 // closeStream clears the footprint of a stream when the stream is not needed any more.
 func (t *http2Server) closeStream(s *Stream, rst bool, rstCode http2.ErrCode, eosReceived bool) {
+	logger.Infof("http2Server.closeStream. rst=%v rstCode=%v eosReceived=%v", rst, rstCode, eosReceived)
 	// In case stream sending and receiving are invoked in separate
 	// goroutines (e.g., bi-directional streaming), cancel needs to be
 	// called to interrupt the potential blocking on other goroutines.
